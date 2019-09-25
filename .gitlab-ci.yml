@@ -18,4 +18,4 @@ test:
 #   variables:
 #     DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB"
   script:
-  - python manage.py test --settings demoapp.settings.ci
+  - python manage.py test --settings django-practice-app.settings.ci
