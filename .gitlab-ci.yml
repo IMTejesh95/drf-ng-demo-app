@@ -16,4 +16,5 @@ test:
   script:
   - python demoapp/manage.py showmigrations
   - python demoapp/manage.py makemigrations
+  - python demoapp/manage.py migrate
   
