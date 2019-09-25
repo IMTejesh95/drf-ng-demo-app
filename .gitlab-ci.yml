@@ -7,9 +7,6 @@ variables:
   MYSQL_DATABASE: "demodb"
   MYSQL_ROOT_PASSWORD: "root"
 
-cache:
-  paths:
-  - ~/.cache/pip/
 
 before_script:
   - python -V
@@ -17,4 +14,6 @@ before_script:
 
 test:
   script:
-  - python manage.py test --settings django-practice-app.settings.ci
+  - python demoapp/manage.py showmigrations
+  - python demoapp/manage.py makemigrations
+  
