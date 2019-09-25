@@ -86,8 +86,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'demodb' ,   #'slurm_acct_db',
         'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1', # Or an IP Address that your DB is hosted on
+        'PASSWORD': 'root',
+        'HOST': 'mysql', # Or an IP Address that your DB is hosted on
         'PORT': '',
     },
 }
