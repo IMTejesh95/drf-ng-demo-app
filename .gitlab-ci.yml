@@ -16,5 +16,5 @@ test:
   script:
   - python demoapp/manage.py makemigrations
   - python demoapp/manage.py migrate
-  - python demoapp/manage.py runscript create_superuser
+  - python demoapp/manage.py runscript -v2 create_superuser
   
