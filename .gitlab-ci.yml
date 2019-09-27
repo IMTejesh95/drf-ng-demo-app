@@ -24,9 +24,8 @@ test:
   - python demoapp/manage.py runscript -v2 create_superuser
   - python demoapp/manage.py test
   
-staging: 
+deploy: 
   stage: deploy
   script:
-  - python demoapp/manage.py runserver &
-  - curl http://127.0.0.1:8000/feature
+  - python demoapp/manage.py runserver 
   
