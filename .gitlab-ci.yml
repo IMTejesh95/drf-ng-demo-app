@@ -11,10 +11,22 @@ variables:
 before_script:
   - python -V
   - pip install -r requirements.txt
+  
+stages:
+  - test
+  - deploy
 
 test:
+  stage: test
   script:
   - python demoapp/manage.py makemigrations
   - python demoapp/manage.py migrate
   - python demoapp/manage.py runscript -v2 create_superuser
+  - python demoapp/manage.py test
+  
+staging: 
+  stage: deploy
+  script:
+  - python demoapp/manage.py runserver
+  - curl http://127.0.0.1:8000/feature
   
