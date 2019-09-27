@@ -27,6 +27,6 @@ test:
 staging: 
   stage: deploy
   script:
-  - python demoapp/manage.py runserver
+  - python demoapp/manage.py runserver &
   - curl http://127.0.0.1:8000/feature
   
