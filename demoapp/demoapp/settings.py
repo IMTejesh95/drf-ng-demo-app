@@ -85,24 +85,24 @@ DATABASES = {
     # },
 
     # For docker mysql image
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'demodb' ,   #'slurm_acct_db',
-    #     'USER': 'root',
-    #     'PASSWORD': 'root',
-    #     'HOST': 'mysql', # Or an IP Address that your DB is hosted on
-    #     'PORT': '',
-    # },
-
-    # For local mysql server
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'demodb' ,   #'slurm_acct_db',
         'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost', # Or an IP Address that your DB is hosted on
+        'PASSWORD': 'root',
+        'HOST': 'mysql', # Or an IP Address that your DB is hosted on
         'PORT': '',
     },
+
+    # For local mysql server
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'demodb' ,   #'slurm_acct_db',
+    #     'USER': 'root',
+    #     'PASSWORD': '',
+    #     'HOST': 'localhost', # Or an IP Address that your DB is hosted on
+    #     'PORT': '',
+    # },
 }
 
 
