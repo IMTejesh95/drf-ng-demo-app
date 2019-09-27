@@ -12,9 +12,6 @@ before_script:
   - python -V
   - pip install -r requirements.txt
   
-stages:
-  - test
-  - deploy
 
 test:
   stage: test
@@ -24,8 +21,4 @@ test:
   - python demoapp/manage.py runscript -v2 create_superuser
   - python demoapp/manage.py test
   
-deploy: 
-  stage: deploy
-  script:
-  - python demoapp/manage.py runserver 
-  
+
