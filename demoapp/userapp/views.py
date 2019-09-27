@@ -10,3 +10,10 @@ class HomeView(APIView):
     
     def get(self, request):
         return Response({"message":"Welcome!"}, status.HTTP_202_ACCEPTED)
+
+
+class FeatureView(APIView):
+    permission_classes = ()
+
+    def get(self, request ):
+        return Response({"message":"This is new feature!"})
