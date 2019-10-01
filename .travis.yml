@@ -1,0 +1,22 @@
+language: python
+python:
+    - "3.7"
+   
+services:
+    - mysql
+    
+env:
+    - DJANGO=2.2.5 DB=mysql
+
+install:
+    - pip3 install -r requirements.txt
+
+before_script: 
+    - mysql -e 'create database demodb;' -u root
+    - mysql -e 'use demodb;show tables;' -u root
+    - python demoapp/manage.py showmigrations
+    - python demoapp/manage.py makemigrations
+    - python demoapp/manage.py migrate
+
+script:
+    - python demoapp/manage.py test
