@@ -19,7 +19,7 @@ from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('endpoints/', include_docs_urls(title='Demo APIs')),
+    path('', include_docs_urls(title='Demo APIs')),
     path('', include('userapp.urls')),
 
 ]
