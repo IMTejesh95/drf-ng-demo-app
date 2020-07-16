@@ -11,14 +11,9 @@ export class AppServiceService {
 
   token:any;
   constructor(private http: HttpClient) { 
-    this.getToken();
   }
 
   getToken(){
-    this.http.post( "http://localhost:8000/api-token-auth/", { username:'admin', password:"admin" })
-      .subscribe( (data:any) => {
-        localStorage.setItem('token', data['token']);
-      });
   }
 
   getFeature() {
@@ -27,7 +22,7 @@ export class AppServiceService {
       'Authorization': 'Token '+ localStorage.getItem('token')
    });  
 
-    return this.http.get( "http://localhost:8000/feature/",  { headers: reqHeader });
+    return this.http.get( "/api/feature/",  { headers: reqHeader });
   }
 
 }

@@ -1,0 +1,46 @@
+<div class="mt-5 p-5 text-center">
+  <h2>Login</h2>
+  <hr>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group row justify-content-center">
+      <div class="col-md-2">
+        <label for="username">Username : </label>
+      </div>
+      <div class="col-md-4">
+        <input type="text" formControlName="username" class="form-control" autocomplete="off"
+          [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+      </div>
+      <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+        <div *ngIf="f.username.errors.required">Username is required</div>
+      </div>
+    </div>
+    <div class="form-group row justify-content-center">
+      <div class="col-md-2">
+        <label for="password">Password : </label>
+      </div>
+      <div class="col-md-4">
+        <input type="password" formControlName="password" class="form-control" autocomplete="off"
+          [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+      </div>
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is required</div>
+      </div>
+    </div>
+    <div class="form-group row justify-content-center">
+      <div class="col-md-2">
+        <label for="captcha">Verify Captcha : </label>
+      </div>
+      <div class="col-md-4">
+        <re-captcha (resolved)="resolved($event)" siteKey="6LdQm_UUAAAAACnJIn6I6BH9q9VZTLen1b9K3oO7"></re-captcha>
+      </div>
+    </div>
+   
+    <div class="form-group row justify-content-center">
+      <button [disabled]="loading" class="btn btn-primary">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Login
+      </button>
+    </div>
+  </form>
+  <a routerLink=""> <<-- Back to home</a>
+</div>

@@ -14,7 +14,6 @@ export class AppComponent implements OnInit {
   constructor( private service:AppServiceService ) { }
 
   ngOnInit(){
-    this.getFeature()
   }
 
   getFeature(){
