@@ -8,7 +8,7 @@ django-extensions==2.2.1
 djangorestframework==3.10.3
 idna==2.8
 itypes==1.1.0
-Jinja2==2.10.1
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 mysqlclient==1.4.4
 pytz==2019.2
